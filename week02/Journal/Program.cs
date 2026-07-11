@@ -1,9 +1,17 @@
 using System;
 
-// Exceeds requirements: entries are date-stamped automatically using
-// DateTime.Now, and the file format uses a custom "~|~" separator that
-// is unlikely to appear in normal journal text, isolated inside Entry.cs
-// so the storage format can be swapped out later without touching Journal.
+// Exceeds requirements:
+// - Entries are date-stamped automatically using DateTime.Now.
+// - The file format uses a custom "~|~" separator that is unlikely to
+//   appear in normal journal text, isolated inside Entry.cs so the
+//   storage format can be swapped out later without touching Journal.
+// - Gracefully handled the error case where a user tries to load a file
+//   that does not exist, displaying a friendly message instead of letting
+//   the program crash with an unhandled exception.
+// - Used private member variables in every class, exposed only through
+//   public methods, to demonstrate abstraction — callers interact with
+//   simple method calls without needing to know how data is stored
+//   internally.
 
 class Program
 {
