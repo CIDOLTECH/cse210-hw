@@ -3,10 +3,14 @@ using System;
 namespace ScriptureMemorizer
 {
     /// <summary>
-    /// Represents the reference portion of a scripture, e.g. "John 3:16"
-    /// or "Proverbs 3:5-6". Provides two constructors: one for a single
-    /// verse and one for a verse range.
+    /// Represents the reference portion of a scripture citation, such as
+    /// "John 3:16" (a single verse) or "Proverbs 3:5-6" (a verse range).
     /// </summary>
+    /// <remarks>
+    /// This class captures only the reference component of a citation — the
+    /// book, chapter, and verse (or verse range) — and does not include the
+    /// underlying scripture text itself.
+    /// </remarks>
     public class Reference
     {
         private readonly string _book;
